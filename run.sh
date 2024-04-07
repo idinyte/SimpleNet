@@ -1,8 +1,8 @@
-datapath=${WORK_DIR}/mvtec_anomaly_detection
+datapath="$DATASET_DIR"
 datasets=('screw' 'pill' 'capsule' 'carpet' 'grid' 'tile' 'wood' 'zipper' 'cable' 'toothbrush' 'transistor' 'metal_nut' 'bottle' 'hazelnut' 'leather')
 dataset_flags=($(for dataset in "${datasets[@]}"; do echo '-d '"${dataset}"; done))
 
-python3 main.py \
+$CONDA_PREFIX/bin/python3.8 "$WORK_DIR"/SimpleNet/main.py \
 --gpu 4 \
 --seed 0 \
 --log_group simplenet_mvtec \
