@@ -1,8 +1,8 @@
 datapath="$DATASET_DIR"
-datasets=('glassfiber')
+datasets=('toothbrush')
 dataset_flags=($(for dataset in "${datasets[@]}"; do echo '-d '"${dataset}"; done))
 
-$CONDA_PREFIX/bin/python3.8 "$WORK_DIR"/SimpleNet/main.py \
+python3 main.py \
 --gpu 4 \
 --seed 0 \
 --log_group simplenet_mvtec \
