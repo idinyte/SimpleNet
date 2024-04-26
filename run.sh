@@ -9,6 +9,7 @@ $CONDA_PREFIX/bin/python3.8 "$WORK_DIR"/SimpleNet/main.py \
 --log_project MVTecAD_Results \
 --results_path results \
 --run_name run \
+--save_segmentation_images \
 net \
 -b wideresnet50 \
 -le layer2 \
