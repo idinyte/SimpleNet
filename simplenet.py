@@ -403,6 +403,7 @@ class SimpleNet(torch.nn.Module):
             self.predict(training_data, "train_")
             scores, segmentations, features, labels_gt, masks_gt = self.predict(test_data)
             auroc, full_pixel_auroc, anomaly_pixel_auroc = self._evaluate(test_data, scores, segmentations, features, labels_gt, masks_gt)
+            self.save_segmentation_images(test_data, segmentations, scores)
             
             return auroc, full_pixel_auroc, anomaly_pixel_auroc
         

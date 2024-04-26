@@ -1,5 +1,5 @@
 datapath="$DATASET_DIR"
-datasets=('screw' 'pill' 'capsule' 'carpet' 'grid' 'tile' 'wood' 'zipper' 'cable' 'toothbrush' 'transistor' 'metal_nut' 'bottle' 'hazelnut' 'leather')
+datasets=('toothbrush')
 dataset_flags=($(for dataset in "${datasets[@]}"; do echo '-d '"${dataset}"; done))
 
 $CONDA_PREFIX/bin/python3.8 "$WORK_DIR"/SimpleNet/main.py \
