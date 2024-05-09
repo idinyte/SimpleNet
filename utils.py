@@ -2,6 +2,7 @@ import csv
 import logging
 import os
 import random
+import cv2
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -41,12 +42,14 @@ def plot_segmentation_images(
 
     os.makedirs(savefolder, exist_ok=True)
 
+
     for image_path, mask_path, anomaly_score, segmentation in tqdm.tqdm(
         zip(image_paths, mask_paths, anomaly_scores, segmentations),
         total=len(image_paths),
         desc="Generating Segmentation Images...",
         leave=False,
     ):
+        cv2.imwrite(image_path + '.jpg', segmentation)
         image = PIL.Image.open(image_path).convert("RGB")
         image = image_transform(image)
         if not isinstance(image, np.ndarray):
